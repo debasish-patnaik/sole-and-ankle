@@ -8,38 +8,44 @@ import UnstyledButton from '../UnstyledButton';
 import Icon from '../Icon';
 
 const SuperHeader = () => {
-  return (
-    <Wrapper>
-      <MarketingMessage>
-        Free shipping on domestic orders over $75!
-      </MarketingMessage>
-      <SearchInput />
-      <HelpLink href="/help">Help</HelpLink>
-      <UnstyledButton>
-        <Icon id="shopping-bag" strokeWidth={1} />
-      </UnstyledButton>
-    </Wrapper>
-  );
+	return (
+		<Wrapper>
+			<MarketingMessage>
+				Free shipping on domestic orders over $75!
+			</MarketingMessage>
+			<SearchInput />
+			<HelpLink href="/help">Help</HelpLink>
+			<UnstyledButton>
+				<Icon id="shopping-bag" strokeWidth={1} />
+			</UnstyledButton>
+		</Wrapper>
+	);
 };
 
 const Wrapper = styled.div`
-  font-size: 0.875rem;
-  color: ${COLORS.gray[300]};
-  background-color: ${COLORS.gray[900]};
+	display: flex;
+	font-size: 0.875rem;
+	color: ${COLORS.gray[300]};
+	background-color: ${COLORS.gray[900]};
+	padding-inline: 32px;
+	gap: 24px;
+	min-height: 40px;
+	align-items: center;
 `;
 
 const MarketingMessage = styled.span`
-  color: ${COLORS.white};
+	color: ${COLORS.white};
+	margin-right: auto;
 `;
 
 const HelpLink = styled.a`
-  color: inherit;
-  text-decoration: none;
-  outline-offset: 2px;
+	color: inherit;
+	text-decoration: none;
+	outline-offset: 2px;
 
-  &:not(:focus-visible) {
-    outline: none;
-  }
+	&:not(:focus-visible) {
+		outline: none;
+	}
 `;
 
 export default SuperHeader;
